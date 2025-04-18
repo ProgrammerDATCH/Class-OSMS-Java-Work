@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # OSMS Application
+  osms:
+    build: .
+    container_name: osms-app
+    environment:
+      - DB_URL=jdbc:mysql://sql.programmerdatch.com:3306/osms
+      - DB_USER=classgroup
+      - DB_PASSWORD=classgroup
+      - DB_DRIVER=com.mysql.cj.jdbc.Driver
+    ports:
+      - "7050:7050"
+    volumes:
+      - ./target:/usr/local/tomcat/webapps
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7050"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  osms-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
