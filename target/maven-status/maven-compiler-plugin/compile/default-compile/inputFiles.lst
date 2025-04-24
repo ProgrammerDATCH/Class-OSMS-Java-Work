@@ -8,11 +8,14 @@
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/dao/OrderDAO.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/model/BaseModel.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/util/DatabaseUtil.java
-/Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/servlet/AdminDashboardServlet.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/dao/CustomerDAO.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/servlet/LogoutServlet.java
+/Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/servlet/admin/AdminDashboardServlet.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/model/Seller.java
+/Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/model/UserProfile.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/dao/ProductDAO.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/model/Customer.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/model/Store.java
+/Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/servlet/admin/AdminSellerManagementServlet.java
 /Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/servlet/LoginServlet.java
+/Users/programmerdatch/SERVER/SELF/CLASS/OSMS/src/main/java/com/osms/servlet/ProfileServlet.java

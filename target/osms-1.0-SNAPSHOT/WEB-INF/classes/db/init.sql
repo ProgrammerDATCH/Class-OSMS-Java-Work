@@ -58,3 +58,18 @@ INSERT INTO Category (ProductId, Category) VALUES
 INSERT INTO Orders (ProductId, CustomerId, Quantity, UnitPrice, TotalByProduct, Date) VALUES 
 (1, @customer_id, 1, 999.99, 999.99, CURDATE()),
 (2, @customer_id, 2, 499.99, 999.98, CURDATE());
+
+-- Add UserProfiles table
+CREATE TABLE IF NOT EXISTS UserProfiles (
+    ProfileId INT PRIMARY KEY AUTO_INCREMENT,
+    UserId INT NOT NULL,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(100),
+    Phone VARCHAR(20),
+    Address TEXT,
+    ProfileImage VARCHAR(255),
+    LastLoginDate DATETIME,
+    IsActive BOOLEAN DEFAULT true,
+    FOREIGN KEY (UserId) REFERENCES Users(UserId) ON DELETE CASCADE
+);

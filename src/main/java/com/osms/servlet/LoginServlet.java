@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", loggedInUser);
 
-                switch (loggedInUser.getRole().toLowerCase()) {
+                switch (loggedInUser.getUserType().toLowerCase()) {
                     case "admin":
                         response.sendRedirect("admin/dashboard");
                         break;

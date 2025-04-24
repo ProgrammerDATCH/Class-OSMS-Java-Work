@@ -8,15 +8,15 @@ public class User extends BaseModel {
     private int userId;
     private String username;
     private String password;
-    private String role;
+    private String userType;
 
     public User() {}
 
-    public User(int userId, String username, String password, String role) {
+    public User(int userId, String username, String password, String userType) {
         this.userId = userId;
         this.username = username;
         this.password = password;
-        this.role = role;
+        this.userType = userType;
     }
 
     public int getUserId() {
@@ -43,12 +43,12 @@ public class User extends BaseModel {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     public User login(String username, String password) throws SQLException {
@@ -58,13 +58,13 @@ public class User extends BaseModel {
     }
 
     public boolean register() throws SQLException {
-        String query = "INSERT INTO Users (Username, Password, Role) VALUES (?, ?, ?)";
-        return executeUpdate(query, username, password, role) > 0;
+        String query = "INSERT INTO Users (Username, Password, UserType) VALUES (?, ?, ?)";
+        return executeUpdate(query, username, password, userType) > 0;
     }
 
     public boolean updateUser() throws SQLException {
-        String query = "UPDATE Users SET Username = ?, Password = ?, Role = ? WHERE UserId = ?";
-        return executeUpdate(query, username, password, role, userId) > 0;
+        String query = "UPDATE Users SET Username = ?, Password = ?, UserType = ? WHERE UserId = ?";
+        return executeUpdate(query, username, password, userType, userId) > 0;
     }
 
     public boolean deleteUser() throws SQLException {
@@ -78,7 +78,7 @@ public class User extends BaseModel {
             resultSet.getInt("UserId"),
             resultSet.getString("Username"),
             resultSet.getString("Password"),
-            resultSet.getString("Role")
+            resultSet.getString("UserType")
         );
     }
 } 

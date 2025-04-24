@@ -25,7 +25,7 @@ public class UserDAO {
                 user.setUserId(rs.getInt("UserId"));
                 user.setUsername(rs.getString("Username"));
                 user.setPassword(rs.getString("Password"));
-                user.setRole(rs.getString("Role"));
+                user.setUserType(rs.getString("UserType"));
                 return user;
             }
         }
@@ -42,7 +42,7 @@ public class UserDAO {
                 user.setUserId(rs.getInt("UserId"));
                 user.setUsername(rs.getString("Username"));
                 user.setPassword(rs.getString("Password"));
-                user.setRole(rs.getString("Role"));
+                user.setUserType(rs.getString("UserType"));
                 return user;
             }
         }
@@ -50,11 +50,11 @@ public class UserDAO {
     }
 
     public boolean addUser(User user) throws SQLException {
-        String query = "INSERT INTO Users (Username, Password, Role) VALUES (?, ?, ?)";
+        String query = "INSERT INTO Users (Username, Password, UserType) VALUES (?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getPassword());
-            stmt.setString(3, user.getRole());
+            stmt.setString(3, user.getUserType());
             int affectedRows = stmt.executeUpdate();
             if (affectedRows > 0) {
                 try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
@@ -69,11 +69,11 @@ public class UserDAO {
     }
 
     public boolean updateUser(User user) throws SQLException {
-        String query = "UPDATE Users SET Username = ?, Password = ?, Role = ? WHERE UserId = ?";
+        String query = "UPDATE Users SET Username = ?, Password = ?, UserType = ? WHERE UserId = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getPassword());
-            stmt.setString(3, user.getRole());
+            stmt.setString(3, user.getUserType());
             stmt.setInt(4, user.getUserId());
             return stmt.executeUpdate() > 0;
         }

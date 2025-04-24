@@ -3,7 +3,8 @@ version: '3.8'
 services:
   # OSMS Application
   osms:
-    build: .
+    # build: .
+    image: ghcr.io/programmerdatch/class-osms:latest
     container_name: osms-app
     environment:
       - DB_URL=jdbc:mysql://sql.programmerdatch.com:3306/osms

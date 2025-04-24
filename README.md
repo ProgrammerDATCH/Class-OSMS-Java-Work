@@ -111,6 +111,80 @@ osms/
 - Track shipping status
 - Make payments
 
+## User Roles and Functionalities
+
+The OSMS supports four main user types, each with specific functionalities:
+
+### 1. Admin User
+- **Default Credentials:**
+  - Username: `admin`
+  - Password: `admin`
+- **Functionalities:**
+  - System administration and user management
+  - Access to all system features and settings
+  - Monitor and manage store operations
+  - Generate system-wide reports
+
+### 2. Seller User
+- **Default Credentials:**
+  - Username: `seller`
+  - Password: `seller`
+- **Functionalities:**
+  - Manage product inventory in the store
+  - Process customer orders
+  - Update product information
+  - Track sales and transactions
+  - Access store-specific reports
+
+### 3. Customer User
+- **Default Credentials:**
+  - Username: `customer`
+  - Password: `customer`
+- **Functionalities:**
+  - Browse available products
+  - Place and track orders
+  - View order history
+  - Manage personal profile
+  - Update contact information
+
+### 4. Supplier User
+- **Default Credentials:**
+  - Username: `supplier`
+  - Password: `supplier`
+- **Functionalities:**
+  - Manage product supplies
+  - Track inventory levels
+  - Receive and fulfill supply requests
+  - Update product information
+  - Monitor supply chain status
+
+### Common Features for All Users
+1. **Profile Management**
+   - Update personal information (first name, last name)
+   - Modify contact details (email, phone)
+   - Change profile picture
+   - Update address information
+   - Track last login activity
+
+2. **Security Features**
+   - Secure login/logout functionality
+   - Session management
+   - Profile privacy settings
+
+3. **User Interface**
+   - Modern, responsive dashboard
+   - Role-specific navigation menus
+   - Real-time notifications
+   - Profile customization options
+
+### Technical Details
+- Profile images are stored in `/uploads/profiles/` directory
+- Maximum file upload limits:
+  - File size threshold: 1 MB
+  - Maximum file size: 5 MB
+  - Maximum request size: 10 MB
+- Supported image formats: All standard image formats
+
 ## Contributing
 
 1. Fork the repository

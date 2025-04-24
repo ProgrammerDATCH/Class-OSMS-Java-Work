@@ -7,8 +7,8 @@ WORKDIR /usr/local/tomcat
 # Remove default Tomcat webapps
 RUN rm -rf webapps/*
 
-# Copy the WAR file to Tomcat webapps directory
-COPY target/osms-1.0-SNAPSHOT.war webapps/osms.war
+# Copy the WAR file to Tomcat webapps directory as ROOT application
+COPY target/osms.war webapps/ROOT.war
 
 # Create server.xml with custom port
 RUN echo '<?xml version="1.0" encoding="UTF-8"?>\n\

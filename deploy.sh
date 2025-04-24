@@ -4,7 +4,7 @@
 REGISTRY="ghcr.io"
 OWNER="programmerdatch"
 REPO="class-osms"
-VERSION=$(date +%Y%m%d-%H%M%S)  # Use timestamp as version
+VERSION="latest"  # Use timestamp as version
 LATEST_TAG="$REGISTRY/$OWNER/$REPO:latest"
 VERSION_TAG="$REGISTRY/$OWNER/$REPO:$VERSION"
 
